@@ -1,8 +1,8 @@
 <template>
     <div class="tab-box">
-        <div v-for="item of arrList" :key="item.val">
+        <router-link v-for="item of arrList" :key="item.val" :to="item.key">
             {{ item.val }}
-        </div>
+        </router-link>
     </div>
 </template>
 <script>
@@ -27,6 +27,11 @@ export default {
     display: flex;
     justify-content: space-around;
     padding: 14px 0;
-    color: rgba(255, 255, 255, 0.5);
+    a {
+        color: rgba(255, 255, 255, 0.5);
+    }
+    & .router-link-active {
+        color: #ffcd32;
+    }
 }
 </style>
