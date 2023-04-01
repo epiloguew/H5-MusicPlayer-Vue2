@@ -9,7 +9,7 @@ export default {
     name: "component-head",
 };
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .titles {
     text-align: center;
     font-size: 18px;

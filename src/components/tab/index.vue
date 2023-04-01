@@ -21,7 +21,7 @@ export default {
     created() {},
 };
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .tab-box {
     width: 100%;
     display: flex;
