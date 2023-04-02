@@ -40,10 +40,16 @@ const router = new VueRouter({
     routes,
 });
 router.beforeEach((to, from, next) => {
-    if (fun.getLoginStatus()) {
+    if (fun.getLoginStatus() || to.path === "/login") {
         next();
     } else {
-        alert(1);
+        //若不是登录状态或path非login重定向
+        if (from.path === "/login") {
+        } else {
+            router.replace({
+                path: "/login",
+            });
+        }
     }
 });
 export default router;
