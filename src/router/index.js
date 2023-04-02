@@ -6,7 +6,17 @@ Vue.use(VueRouter);
 const routes = [
     {
         path: "/",
+        redirect: (to) => {
+            let login = sessionStorage.getItem("h5-vue2");
+            return login ? "/recommend" : "/login";
+        },
+    },
+    {
+        path: "/login",
         component: Index,
+        meta: {
+            title: "登录",
+        },
     },
     {
         path: "/ranking",
