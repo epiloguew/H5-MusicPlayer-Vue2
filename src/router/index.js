@@ -35,6 +35,17 @@ const routes = [
         path: "/singer",
         component: () => import("@/views/singer/index.vue"),
     },
+    {
+        path: "/404",
+        meta: {
+            title: "Page 404",
+        },
+        component: () => import("@/views/404/index.vue"),
+    },
+    {
+        path: "*",
+        redirect: "/404",
+    },
 ];
 const router = new VueRouter({
     routes,
