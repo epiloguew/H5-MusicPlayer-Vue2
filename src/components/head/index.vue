@@ -1,12 +1,17 @@
 <template>
     <div class="titles">
         <img src="@/assets/logo.png" class="title-icon" />
-        <span>A Vue2 Music Player</span>
+        <span>{{ getProjectTitle }}</span>
     </div>
 </template>
 <script>
 export default {
     name: "component-head",
+    computed: {
+        getProjectTitle() {
+            return this.$route.meta.title || "A Vue2 Music Player";
+        },
+    },
 };
 </script>
 <style lang="less" scoped>
