@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Index from "@/views/index/index.vue";
+import * as fun from "@/utils/index";
 Vue.use(VueRouter);
 
 const routes = [
@@ -35,9 +36,14 @@ const routes = [
         component: () => import("@/views/singer/index.vue"),
     },
 ];
-
 const router = new VueRouter({
     routes,
 });
-
+router.beforeEach((to, from, next) => {
+    if (fun.getLoginStatus()) {
+        next();
+    } else {
+        alert(1);
+    }
+});
 export default router;
